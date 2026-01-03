@@ -2,15 +2,15 @@ import { z } from 'zod'
 
 export const TrainModel = z.object({
     name: z.string(),
-    type: z.enum(["Man","Woman","Other"]),
+    type: z.enum(["Man","Woman","Others"]),
     age: z.number(),
     ethnicity: z.enum(["White",
         "Black",
-        "East Asian",
-        "Asian American",
-        "South East Asian",
-        "South Asian",
-        "Middle Eastern",
+        "EastAsian",
+        "AsianAmerican",
+        "SouthEastAsian",
+        "SouthAsian",
+        "MiddleEastern",
         "Pacific",
         "Hispanic"
     ]),
