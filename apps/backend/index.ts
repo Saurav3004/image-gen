@@ -16,7 +16,7 @@ app.post('/ai/training', async (req,res) => {
         })
     }
 
-    await prismaClient.model.create({
+    const modelData = await prismaClient.model.create({
         data:{
             name: data.name,
             type: data.type,
@@ -26,6 +26,10 @@ app.post('/ai/training', async (req,res) => {
             bald: data.bald
 
         }
+    })
+
+    return res.status(200).json({
+        modelId: modelData.id
     })
 });
 
