@@ -24,7 +24,6 @@ app.post('/ai/training', async (req,res) => {
             ethnicity: data.ethnicity,
             eyeColor: data.eyeColor,
             bald: data.bald
-
         }
     })
 
@@ -32,6 +31,10 @@ app.post('/ai/training', async (req,res) => {
         modelId: modelData.id
     })
 });
+
+app.post("/ai/model",async (req,res) => {
+    console.log(req.body)
+})
 
 app.listen(PORT,() => {
     console.log(`app is running on port:${PORT}`)
