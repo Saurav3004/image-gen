@@ -33,7 +33,13 @@ app.post('/ai/training', async (req,res) => {
 });
 
 app.post("/ai/model",async (req,res) => {
-    console.log(req.body)
+    const {data,success} = ModelName.safeParse(req.body)
+
+    if(!success){
+        return res.status(400).json({
+            msg:"Incorrect Inputs"
+        })
+    }
 })
 
 app.listen(PORT,() => {
